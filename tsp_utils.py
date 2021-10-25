@@ -7,7 +7,12 @@ def vectorToDistMatrix(coords):
     '''
     Create the distance matrix
     '''
-    return np.sqrt((np.square(coords[:, np.newaxis] - coords).sum(axis=2)))
+    xCoords = coords[:, [0, 1]]
+    zCoords = coords[:, [2,3]]
+    penaltyMarCortez = 1
+    penaltyGolfo = 10
+
+    return np.sqrt((np.square(xCoords[:, np.newaxis] - xCoords).sum(axis=2)) + penaltyGolfo * np.square(zCoords[:, np.newaxis] - zCoords).sum(axis=2))
 
 
 def nearestNeighbourSolution(dist_matrix):
