@@ -3,13 +3,21 @@ import numpy as np
 
 
 class NodeGenerator:
-    def __init__(self, width, height, nodesNumber):
+    def __init__(self, width, height):
         self.width = width
         self.height = height
-        self.nodesNumber = nodesNumber
+        ##self.nodesNumber = nodesNumber
 
     def generate(self):
-        xs = np.random.randint(self.width, size=self.nodesNumber)
-        ys = np.random.randint(self.height, size=self.nodesNumber)
+        #xs = np.random.randint(self.width, size=self.nodesNumber)
+        #ys = np.random.randint(self.height, size=self.nodesNumber)
+        xs = np.array([-99.12766, -98.2019300, -103.39182, -100.31847, -106.08889, -89.61696, -101.0053, -102.28259,
+                       -110.97732, -115.45446, -100.9855, -107.7321500, -100.38806, -101.18443, -104.65756, -93.11308,
+                       -96.91589, -104.89569, -99.23075, -92.93028, -99.14599, -98.73329, -96.72365, -110.3005,
+                       -90.52554, -99.50578, -99.65324, -88.30381, -103.72714, -102.58141, -101.2591, -98.19982])
 
+        ys = np.array([19.42847, 19.0433400, 20.66682, 25.67507, 28.63528, 20.97537, 25.42321, 21.88234,
+                       29.1026, 32.62781, 22.1566, 24.4935100, 20.58806, 19.70078, 24.02032, 16.75973,
+                       19.53124, 21.50951, 18.9261, 17.98689, 23.74174, 20.11697, 17.06542, 24.14437,
+                       19.84386, 17.5506, 19.28786, 18.51413, 19.24997, 22.76843, 21.01858, 19.31905])
         return np.column_stack((xs, ys))
