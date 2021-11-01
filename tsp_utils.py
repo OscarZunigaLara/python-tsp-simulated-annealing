@@ -11,8 +11,9 @@ def vectorToDistMatrix(coords):
     zCoords = coords[:, [2,3]]
     penaltyMarCortez = 1
     penaltyGolfo = 10
-
-    return np.sqrt((np.square(xCoords[:, np.newaxis] - xCoords).sum(axis=2)) + penaltyGolfo * np.square(zCoords[:, np.newaxis] - zCoords).sum(axis=2))
+    dist = np.sqrt((np.square(xCoords[:, np.newaxis] - xCoords).sum(axis=2)) + penaltyGolfo * np.square(zCoords[:, np.newaxis] - zCoords).sum(axis=2))
+    print(dist)
+    return dist
 
 
 def nearestNeighbourSolution(dist_matrix):
